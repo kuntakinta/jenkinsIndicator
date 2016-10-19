@@ -8,12 +8,12 @@ def success = true
 //list of all jobs taken into consideration in certain job
 def jobNames = build.buildVariableResolver.resolve("JOBS").split(',')
 
-for (String value : jobNames) {
-    println("Checking job: " + value)
-    Job job = Hudson.instance.getJob(value)
+for (String jobName : jobNames) {
+    println("Checking job: " + jobName)
+    Job job = Hudson.instance.getJob(jobName)
 
     if (job.lastCompletedBuild.result != Result.SUCCESS) {
-        println("job " + value + " has failed, link to job result page: " + job.lastCompletedBuild.getAbsoluteUrl())
+        println("job " + jobName + " was not successful, link to job result page: " + job.lastCompletedBuild.getAbsoluteUrl())
         success = false
     }
 }

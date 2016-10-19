@@ -1,19 +1,1 @@
-# Project files
-*.iml
 .idea/
-*.log
-*.ipr
-*.iws
-# Package Files #
-.DS_Store
-build
-target/
-.gradle/
-*.class
-*.jar
-*.war
-*.ear
-# other
-atlassian-ide-plugin.xml
-build/
-out

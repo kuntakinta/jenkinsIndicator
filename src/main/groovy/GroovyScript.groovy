@@ -10,7 +10,7 @@ def jobNames = build.buildVariableResolver.resolve("JOBS").split(',')
 
 for( String jobName : jobNames ){
     println("Checking job: " + jobName)
-    Job job = Hudson.instance.getJob(value)
+    Job job = Hudson.instance.getJob(jobName)
 
     if (job.lastCompletedBuild.result != Result.SUCCESS){
         println("job " + jobName + " was not successful, link to job result page: " + job.lastCompletedBuild.getAbsoluteUrl())

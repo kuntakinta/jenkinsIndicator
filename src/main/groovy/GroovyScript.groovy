@@ -13,7 +13,7 @@ for( String jobName : jobNames ){
     Job job = Hudson.instance.getJob(value)
 
     if (job.lastCompletedBuild.result != Result.SUCCESS){
-        println("job " + value+ " was not successful, link to job result page: " + job.lastCompletedBuild.getAbsoluteUrl())
+        println("job " + jobName + " was not successful, link to job result page: " + job.lastCompletedBuild.getAbsoluteUrl())
         success=false
     }
 }
